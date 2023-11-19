@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona z hasłem i filmem YouTube</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #login-form {
+            max-width: 300px;
+            margin: auto;
+        }
+
+        #error-message {
+            color: red;
+        }
+
+        #video-container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        <h2>Film z YouTube</h2>
+        <!-- Wprowadź link do filmu YouTube w src -->
+        <iframe width="860" height="315" src="https://www.youtube.com/embed/7QjzI86am44?si=NEaGi5bVD7-t4dDG" frameborder="0" allowfullscreen></iframe>
+	   
+ </div>
+
+    <div id="login-form">
+        <h2>Podaj hasło</h2>
+        <form action="poziom1.html" method="post" onsubmit="return checkPassword()">
+            <label for="password">Hasło:</label>
+            <input type="text" id="password" name="password" required>
+            <br>
+            <input type="submit" value="Wprowadź">
+        </form>
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+
+            // Sprawdź, czy hasło jest prawidłowe (możesz dostosować warunek)
+            if (password === "kamil") {
+                // Prawidłowe hasło, pokaż okno z filmem
+               
+                return true;  // Prawidłowe hasło, formularz zostanie przesłany
+            } else {
+                document.getElementById("error-message").innerText = "Błędne hasło!";
+                return false; // Błędne hasło, formularz nie zostanie przesłany
+            }
+        }
+    </script>
+
+</body>
+</html>

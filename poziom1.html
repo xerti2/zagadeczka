@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona z hasłem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #login-form {
+            max-width: 300px;
+            margin: auto;
+        }
+
+        #error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-form">
+        <h2>Podaj hasło</h2>
+        <form action="przekierowanie.html" method="post" onsubmit="return checkPassword()">
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <input type="submit" value="Zaloguj">
+        </form>
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+
+            // Sprawdź, czy hasło jest prawidłowe (możesz dostosować warunek)
+            if (password === "japko") {
+                return true;  // Prawidłowe hasło, formularz zostanie przesłany
+            } else {
+                document.getElementById("error-message").innerText = "Błędne hasło!";
+                return false; // Błędne hasło, formularz nie zostanie przesłany
+            }
+        }
+    </script>
+
+</body>
+</html>
